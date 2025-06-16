@@ -1,0 +1,164 @@
+/* Reset some basics */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(150deg, #4a90e2, #50e3c2);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Container */
+.upload-container {
+  max-width: 480px;
+  width: 100%;
+  background: #ffffffcc;
+  padding: 30px 40px;
+  border-radius: 25px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  user-select: none;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.upload-container:hover {
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.3);
+  background-color: #ffffffee;
+}
+
+/* Header */
+h1 {
+  font-family: 'Georgia', serif;
+  font-size: 30px;
+  font-weight: 800;
+  color: #154360;
+  margin-bottom: 10px;
+  letter-spacing: 3px;
+  text-transform: capitalize;
+  text-shadow: 1px 1px 4px rgba(21, 67, 96, 0.4);
+}
+
+/* Subtitle text */
+p {
+  font-size: 15px;
+  color: #117a65; /* tealish */
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+/* File input */
+input[type="file"] {
+  width: 100%;
+  padding: 14px 18px;
+  border: 3px dashed #117a65;
+  border-radius: 18px;
+  cursor: pointer;
+  transition: border-color 0.4s ease, background-color 0.4s ease;
+  font-size: 16px;
+  color: #117a65;
+  background-color: #e0f2f1;
+  outline: none;
+  box-shadow: inset 0 0 5px #4db6ac;
+}
+
+input[type="file"]:hover,
+input[type="file"]:focus {
+  border-color: #0b5345;
+  background-color: #b2dfdb;
+  color: #0b5345;
+}
+
+/* Selected file info */
+.info {
+  margin-top: 18px;
+  font-weight: 700;
+  color: #1b4f72; /* dark blue */
+  font-size: 16px;
+  word-break: break-word;
+  letter-spacing: 0.3px;
+}
+
+/* Error message */
+.error {
+  margin-top: 12px;
+  color: #c0392b; /* bright red */
+  font-weight: 700;
+  font-size: 15px;
+  text-shadow: 0 0 3px #e74c3c66;
+}
+
+/* Upload button */
+.upload-button {
+  margin-top: 30px;
+  background: linear-gradient(135deg, #16a085, #1abc9c);
+  border: none;
+  color: white;
+  padding: 16px 50px;
+  font-size: 18px;
+  border-radius: 40px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 7px 18px rgba(26, 188, 156, 0.6);
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.upload-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #138d75, #17a589);
+  box-shadow: 0 10px 25px rgba(23, 160, 133, 0.8);
+  transform: scale(1.05);
+}
+
+.upload-button:disabled {
+  background: #95a5a6;
+  color: #566573;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Progress bar container */
+.progress-bar {
+  margin: 25px auto 0;
+  height: 28px;
+  width: 100%;
+  background: #d0ece7;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 6px rgba(255, 255, 255, 0.8);
+}
+
+/* Progress fill */
+.progress-fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #16a085, #1abc9c);
+  border-radius: 28px 0 0 28px;
+  transition: width 0.3s ease;
+  color: white;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  font-size: 15px;
+  letter-spacing: 0.8px;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive tweaks */
+@media (max-width: 520px) {
+  .upload-container {
+    padding: 25px 20px;
+  }
+  .upload-button {
+    width: 100%;
+    padding: 16px 0;
+  }
+}
